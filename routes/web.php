@@ -13,6 +13,11 @@ Route::group(['prefix' => 'checkout', 'as' => 'checkout.'], function () {
     Route::post('/store', [CheckoutController::class, 'store'])->name('store');
 });
 
+// Admin Routes
+Route::get('/auth/login', function () {
+    return view('backend.auth.auth-login');
+})->name('login');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
