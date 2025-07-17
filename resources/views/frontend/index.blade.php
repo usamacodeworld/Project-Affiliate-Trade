@@ -11,7 +11,7 @@
                     <div class="row gy-0 gx-5">
                         <div class="col-xl-12 animated fadeInLeft">
                             <div class="text-sm-center text-md-end">
-                                <h4 class="text-primary text-uppercase fw-bold mb-4">Welcome To Stocker</h4>
+                                <h4 class="text-primary text-uppercase fw-bold mb-4">Welcome To Xforexfxtrst</h4>
                                 <h1 class="display-4 text-uppercase text-white mb-4">Invest with <span
                                         class="text-primary">Gold Standard</span> Returns</h1>
                                 <p class="mb-5 fs-5">Experience premium investment strategies with our exclusive gold-backed
@@ -59,7 +59,7 @@
                         <h4 class="text-primary">About Us</h4>
                         <h1 class="display-5 mb-4 gold-accent">Wealth Management <span class="text-primary">Perfected</span>
                         </h1>
-                        <p class="mb-4">Stocker combines traditional investment wisdom with innovative financial
+                        <p class="mb-4">Xforexfxtrst combines traditional investment wisdom with innovative financial
                             technology to create unparalleled wealth-building opportunities. Our gold-backed strategies
                             provide security in volatile markets.</p>
                         <div class="row g-4">
@@ -209,7 +209,7 @@
                                 <p class="mb-0 text-primary">Gold Tier Investor</p>
                             </div>
                         </div>
-                        <p class="mb-0">"Stocker's gold-backed strategy provided the security I needed during market
+                        <p class="mb-0">"Xforexfxtrst's gold-backed strategy provided the security I needed during market
                             volatility while still delivering impressive returns. My portfolio has grown 35% in just two
                             years."</p>
                         <div class="d-flex text-primary mt-3">
@@ -232,7 +232,7 @@
                             </div>
                         </div>
                         <p class="mb-0">"The peace of mind that comes with knowing my investments are gold-backed is
-                            invaluable. Stocker's team has expertly navigated my portfolio through uncertain economic
+                            invaluable. Xforexfxtrst's team has expertly navigated my portfolio through uncertain economic
                             times."</p>
                         <div class="d-flex text-primary mt-3">
                             <i class="fas fa-star"></i>
@@ -253,7 +253,7 @@
                                 <p class="mb-0 text-primary">Bronze Tier Investor</p>
                             </div>
                         </div>
-                        <p class="mb-0">"As someone new to investing, Stocker made me feel secure with their gold-backed
+                        <p class="mb-0">"As someone new to investing, Xforexfxtrst made me feel secure with their gold-backed
                             approach. My initial investment has already grown by 22% in the first year alone!"</p>
                         <div class="d-flex text-primary mt-3">
                             <i class="fas fa-star"></i>
