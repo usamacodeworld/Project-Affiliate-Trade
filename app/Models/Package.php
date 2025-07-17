@@ -9,4 +9,8 @@ class Package extends Model
 {
     /** @use HasFactory<\Database\Factories\PackageFactory> */
     use HasFactory;
+
+    public function checkout(){
+        return $this->hasMany(Checkout::class);
+    }
 }

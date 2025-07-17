@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\CheckoutController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -16,7 +18,15 @@ Route::group(['prefix' => 'checkout', 'as' => 'checkout.'], function () {
 // Admin Routes
 Route::get('/auth/login', function () {
     return view('backend.auth.auth-login');
-})->name('login');
+})->name('auth.login');
+Route::middleware('auth')->group(function () {
+    Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+        Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+        Route::get('/users/{provider}', [UserController::class, 'users'])->name('users');
+        Route::put('/checkout/update-status/{id}', [CheckoutController::class, 'updateStatus'])->name('checkout.updateStatus');
+    });
+});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -6,10 +6,12 @@ use App\Models\User;
 use App\Models\Package;
 use App\Models\Checkout;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Mail\SendUserStatusEmail;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\StoreCheckoutRequest;
 use App\Http\Requests\UpdateCheckoutRequest;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Illuminate\Support\Facades\Hash;
 
 class CheckoutController extends Controller
 {
@@ -49,7 +51,7 @@ class CheckoutController extends Controller
             $user->name = $validatedData['name'];
             $user->username = $username;
             $user->email = $validatedData['email'];
-            $user->password=Hash::make('password');
+            $user->password = Hash::make('password');
             $user->phone = $validatedData['phone'];
             $user->save();
         }
@@ -100,5 +102,30 @@ class CheckoutController extends Controller
     public function destroy(Checkout $checkout)
     {
         //
+    }
+
+    public function updateStatus(Request $request, $id)
+    {
+        $request->validate([
+            'status' => 'required|in:pending,active,cancelled,failed,success,hold',
+        ]);
+
+        $checkout = Checkout::with('user')->findOrFail($id);
+        $user = $checkout->user;
+        $checkout->status = $request->status;
+        $checkout->save();
+
+        // Auto-generate password only if status is active or success and user doesn't already have one
+        $password = null;
+        if (in_array($request->status, ['active', 'success'])) {
+            $password = Str::random(10);
+            $user->password = Hash::make($password);
+            $user->save();
+        }
+
+        // Send email with status message and (optional) password
+        Mail::to($user->email)->send(new SendUserStatusEmail($user, $request->status, $password));
+
+        return redirect()->back()->with('success', 'Status updated and email sent successfully.');
     }
 }

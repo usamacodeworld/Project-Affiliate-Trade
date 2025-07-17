@@ -1,0 +1,4 @@
+FTP Username: xforexfxtrst
+FTP server: ftp.xforexfxtrst.com
+FTP & explicit FTPS port:  21
+FTP Password: :RI-M87g5!h}

@@ -58,4 +58,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function checkout()
+    {
+        return $this->hasMany(Checkout::class);
+    }
 }

@@ -20,10 +20,10 @@
                 @csrf
                 <input type="hidden" name="package_id" value="{{ $package->id }}">
                 <div class="row g-5">
-                    <div class="col-xl-6">
+                    <div class="col-xl-6" >
                         <div class="wow fadeInUp" data-wow-delay="0.2s">
 
-                            <div class="bg-light p-5 rounded h-100 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="p-5 rounded h-100 wow fadeInUp" data-wow-delay="0.2s" style="background-color: #1e1e1e">
                                 <h4 class="text-primary">Fill your details</h4>
                                 <p class="mb-4">Kindly, fill the correct details because after approval you got the login
                                     link
@@ -36,7 +36,7 @@
                                             @error('name')
                                                 <p class="text-danger">{{ $message }}</p>
                                             @enderror
-                                            <label for="name">Your Name</label>
+                                            <label for="name" class="text-dark">Your Name</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-xl-6">
@@ -47,7 +47,7 @@
                                             @error('email')
                                                 <p class="text-danger">{{ $message }}</p>
                                             @enderror
-                                            <label for="email">Your Email</label>
+                                            <label for="email" class="text-dark">Your Email</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-xl-6">
@@ -57,7 +57,7 @@
                                             @error('phone')
                                                 <p class="text-danger">{{ $message }}</p>
                                             @enderror
-                                            <label for="phone">Your Phone</label>
+                                            <label for="phone" class="text-dark">Your Phone</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-xl-6">
@@ -67,7 +67,7 @@
                                             @error('transaction_screenshot')
                                                 <p class="text-danger">{{ $message }}</p>
                                             @enderror
-                                            <label for="address">Transaction Image</label>
+                                            <label for="address" class="text-dark">Transaction Image</label>
                                         </div>
 
                                     </div>
@@ -78,7 +78,7 @@
                                             @error('notes')
                                                 <p class="text-danger">{{ $message }}</p>
                                             @enderror
-                                            <label for="message">Message</label>
+                                            <label for="message" class="text-dark">Message</label>
                                         </div>
                                     </div>
                                 </div>
@@ -141,10 +141,10 @@
                                     </div>
 
                                     <button type="submit" data-mdb-button-init data-mdb-ripple-init
-                                        class="btn btn-info btn-block btn-lg">
+                                        class="btn btn-info btn-block btn-lg w-100" style="background-color: #d4af37">
                                         <div class="d-flex justify-content-between">
-                                            <span>${{ number_format($package->price) }}</span>
                                             <span>Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
+                                            <span>${{ number_format($package->price) }}</span>
                                         </div>
                                     </button>
 

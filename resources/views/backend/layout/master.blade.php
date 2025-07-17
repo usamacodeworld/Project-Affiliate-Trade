@@ -7,12 +7,15 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>@yield('page_title', 'Dashbard')</title>
+    <title>@yield('page_title', 'Dashbard') - Xforexfxtrst</title>
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('backend/assets/css/app.min.css') }}">
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('backend/assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/assets/css/components.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/assets/bundles/datatables/datatables.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('backend/assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css') }}">
     <!-- Custom style CSS -->
     <link rel="stylesheet" href="{{ asset('backend/assets/css/custom.css') }}">
     <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
@@ -43,6 +46,12 @@
     <script src="{{ asset('backend/assets/js/scripts.js') }}"></script>
     <!-- Custom JS File -->
     <script src="{{ asset('backend/assets/js/custom.js') }}"></script>
+    <script src="{{ asset('backend/assets/bundles/datatables/datatables.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js') }}">
+    </script>
+    <script src="{{ asset('backend/assets/bundles/jquery-ui/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/page/datatables.js') }}"></script>
+
 </body>
 
 
