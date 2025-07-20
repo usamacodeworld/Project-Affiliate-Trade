@@ -2,7 +2,7 @@
 <html lang="en">
 
 
-<!-- index.html  21 Nov 2019 03:44:50 GMT -->
+<!-- index.blade.php  21 Nov 2019 03:44:50 GMT -->
 
 <head>
     <meta charset="UTF-8">
@@ -55,6 +55,6 @@
 </body>
 
 
-<!-- index.html  21 Nov 2019 03:47:04 GMT -->
+<!-- index.blade.php  21 Nov 2019 03:47:04 GMT -->
 
 </html>
