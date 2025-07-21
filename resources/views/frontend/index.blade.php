@@ -52,7 +52,7 @@
                     <div class="col-12 col-lg-5">
                         <div class="hero-video-section">
                             <video class="hero-video" autoplay loop muted playsinline>
-                                <source src="{{asset('frontend/assest/media/Hero2.webm')}}" type="video/webm">
+                                <source src="{{ asset('frontend/assest/media/Hero2.webm') }}" type="video/webm">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -66,7 +66,8 @@
                             <div class="col-4">
                                 <div class="hero-stat-item">
                                     <div class="hero-stat-content">
-                                        <img alt="Icon 1" class="hero-stat-icon" src="{{asset('frontend/assest/images/Vector1.svg')}}">
+                                        <img alt="Icon 1" class="hero-stat-icon"
+                                            src="{{ asset('frontend/assest/images/Vector1.svg') }}">
                                         <span class="hero-stat-number">95%</span>
                                     </div>
                                     <p class="hero-stat-label">Profit Share</p>
@@ -75,7 +76,8 @@
                             <div class="col-4">
                                 <div class="hero-stat-item">
                                     <div class="hero-stat-content">
-                                        <img alt="Icon 2" class="hero-stat-icon" src="{{asset('frontend/assest/images/Vector3.svg')}}">
+                                        <img alt="Icon 2" class="hero-stat-icon"
+                                            src="{{ asset('frontend/assest/images/Vector3.svg') }}">
                                         <span class="hero-stat-number">1:200</span>
                                     </div>
                                     <p class="hero-stat-label">Leverage</p>
@@ -84,7 +86,8 @@
                             <div class="col-4">
                                 <div class="hero-stat-item">
                                     <div class="hero-stat-content">
-                                        <img alt="Icon 3" class="hero-stat-icon" src="{{asset('frontend/assest/images/Vector0.svg')}}">
+                                        <img alt="Icon 3" class="hero-stat-icon"
+                                            src="{{ asset('frontend/assest/images/Vector0.svg') }}">
                                         <span class="hero-stat-number">No</span>
                                     </div>
                                     <p class="hero-stat-label">High Watermark</p>
@@ -111,7 +114,8 @@
                             <div class="col-12 col-lg-6 mb-4 mb-md-0">
                                 <div class="rewarding-image-container text-center">
                                     <img alt="Lottie Animation" loading="lazy" width="646" height="465"
-                                         class="rewarding-image img-fluid" src="{{asset('frontend/assest/images/pcsteps.png')}}">
+                                        class="rewarding-image img-fluid"
+                                        src="{{ asset('frontend/assest/images/pcsteps.png') }}">
                                 </div>
                                 <!-- Title and Description -->
                                 <div class="row mb-4">
@@ -177,7 +181,8 @@
                                                 <p>Scale your trading</p>
                                             </div>
                                             <div class="step-description">
-                                                <p>Upgrade your account by completing additional Xforexfxtrst challenges. The
+                                                <p>Upgrade your account by completing additional Xforexfxtrst challenges.
+                                                    The
                                                     higher the challenge level, the higher your funded trading, up to
                                                     $100,000.</p>
                                             </div>
@@ -237,38 +242,55 @@
                         <!-- 1 Step Slider -->
                         <div class="trading-slider active" id="slider-1-step">
                             <div class="owl-carousel owl-theme" id="owl-1-step">
-                                @foreach($packages as $package)
-                                    <a href="{{route('checkout.package',$package->slug)}}">
+                                @foreach ($packages as $package)
+                                    <a href="{{ route('checkout.package', $package->slug) }}">
                                         <div class="trading-card">
                                             <div class="card-content">
-                                                <h3 class="card-title">{{$package->name}}</h3>
+                                                <h3 class="card-title">{{ $package->name }}</h3>
                                                 <div class="card-image-container">
-                                                    <img alt="Trading sticks" class="card-image" src="{{asset('frontend/assest/images/sticks.png')}}">
+                                                    <img alt="Trading sticks" class="card-image"
+                                                        src="{{ asset('frontend/assest/images/sticks.png') }}">
                                                 </div>
-                                                <p class="card-description">Entry-level challenge for aspiring traders starting
+                                                <p class="card-description">Entry-level challenge for aspiring traders
+                                                    starting
                                                     their journey.</p>
                                                 <ul class="card-features">
                                                     <li class="feature-item">
                                                         <img alt="check icon" class="check-icon"
-                                                             src="{{asset('frontend/assest/images/icon_check1.svg')}}">
-                                                        <p>Trade Limit From ${{$package->trade_limit_from}}</p>
+                                                            src="{{ asset('frontend/assest/images/icon_check1.svg') }}">
+                                                        <p>Trade Limit From ${{ $package->trade_limit_from }}</p>
                                                     </li>
                                                     <li class="feature-item">
                                                         <img alt="check icon" class="check-icon"
-                                                             src="{{asset('frontend/assest/images/icon_check1.svg')}}">
-                                                        <p>Trade Limit To ${{$package->trade_limit_to}}</p>
+                                                            src="{{ asset('frontend/assest/images/icon_check1.svg') }}">
+                                                        <p>Trade Limit To ${{ $package->trade_limit_to }}</p>
 
                                                     </li>
                                                     <li class="feature-item">
                                                         <img alt="check icon" class="check-icon"
-                                                             src="{{asset('frontend/assest/images/icon_check1.svg')}}">
-                                                        <p>Price ${{$package->price}}</p>
+                                                            src="{{ asset('frontend/assest/images/icon_check1.svg') }}">
+                                                        <p>Price ${{ $package->price }}</p>
 
                                                     </li>
+
                                                     <li class="feature-item">
                                                         <img alt="check icon" class="check-icon"
-                                                             src="{{asset('frontend/assest/images/icon_check1.svg')}}">
-                                                        <p>{{$package->description}}</p>
+                                                            src="{{ asset('frontend/assest/images/icon_check1.svg') }}">
+                                                        <p>Leverage {{ $package->leverage }}</p>
+
+                                                    </li>
+
+                                                    <li class="feature-item">
+                                                        <img alt="check icon" class="check-icon"
+                                                            src="{{ asset('frontend/assest/images/icon_check1.svg') }}">
+                                                        <p>Account Size ${{ number_format($package->account_size) }}</p>
+
+                                                    </li>
+
+                                                    <li class="feature-item">
+                                                        <img alt="check icon" class="check-icon"
+                                                            src="{{ asset('frontend/assest/images/icon_check1.svg') }}">
+                                                        <p>{{ $package->description }}</p>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -281,38 +303,54 @@
                         <!-- 2 Steps Slider -->
                         <div class="trading-slider" id="slider-2-steps">
                             <div class="owl-carousel owl-theme" id="owl-2-steps">
-                                @foreach($packages as $package)
-                                    <a href="{{route('checkout.package',$package->slug)}}">
+                                @foreach ($packages as $package)
+                                    <a href="{{ route('checkout.package', $package->slug) }}">
                                         <div class="trading-card">
                                             <div class="card-content">
-                                                <h3 class="card-title">{{$package->name}}</h3>
+                                                <h3 class="card-title">{{ $package->name }}</h3>
                                                 <div class="card-image-container">
-                                                    <img alt="Trading sticks" class="card-image" src="{{asset('frontend/assest/images/sticks.png')}}">
+                                                    <img alt="Trading sticks" class="card-image"
+                                                        src="{{ asset('frontend/assest/images/sticks.png') }}">
                                                 </div>
-                                                <p class="card-description">Entry-level challenge for aspiring traders starting
+                                                <p class="card-description">Entry-level challenge for aspiring traders
+                                                    starting
                                                     their journey.</p>
                                                 <ul class="card-features">
                                                     <li class="feature-item">
                                                         <img alt="check icon" class="check-icon"
-                                                             src="{{asset('frontend/assest/images/icon_check1.svg')}}">
-                                                        <p>Trade Limit From ${{$package->trade_limit_from}}</p>
+                                                            src="{{ asset('frontend/assest/images/icon_check1.svg') }}">
+                                                        <p>Trade Limit From ${{ $package->trade_limit_from }}</p>
                                                     </li>
                                                     <li class="feature-item">
                                                         <img alt="check icon" class="check-icon"
-                                                             src="{{asset('frontend/assest/images/icon_check1.svg')}}">
-                                                        <p>Trade Limit To ${{$package->trade_limit_to}}</p>
+                                                            src="{{ asset('frontend/assest/images/icon_check1.svg') }}">
+                                                        <p>Trade Limit To ${{ $package->trade_limit_to }}</p>
 
                                                     </li>
                                                     <li class="feature-item">
                                                         <img alt="check icon" class="check-icon"
-                                                             src="{{asset('frontend/assest/images/icon_check1.svg')}}">
-                                                        <p>Price ${{$package->price}}</p>
+                                                            src="{{ asset('frontend/assest/images/icon_check1.svg') }}">
+                                                        <p>Price ${{ $package->price }}</p>
+
+                                                    </li>
+
+                                                    <li class="feature-item">
+                                                        <img alt="check icon" class="check-icon"
+                                                            src="{{ asset('frontend/assest/images/icon_check1.svg') }}">
+                                                        <p>Leverage {{ $package->leverage }}</p>
+
+                                                    </li>
+
+                                                    <li class="feature-item">
+                                                        <img alt="check icon" class="check-icon"
+                                                            src="{{ asset('frontend/assest/images/icon_check1.svg') }}">
+                                                        <p>Account Size ${{ number_format($package->account_size) }}</p>
 
                                                     </li>
                                                     <li class="feature-item">
                                                         <img alt="check icon" class="check-icon"
-                                                             src="{{asset('frontend/assest/images/icon_check1.svg')}}">
-                                                        <p>{{$package->description}}</p>
+                                                            src="{{ asset('frontend/assest/images/icon_check1.svg') }}">
+                                                        <p>{{ $package->description }}</p>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -325,38 +363,54 @@
                         <!-- XPZero Slider -->
                         <div class="trading-slider" id="slider-xpzero">
                             <div class="owl-carousel owl-theme" id="owl-xpzero">
-                                @foreach($packages as $package)
-                                    <a href="{{route('checkout.package',$package->slug)}}">
+                                @foreach ($packages as $package)
+                                    <a href="{{ route('checkout.package', $package->slug) }}">
                                         <div class="trading-card">
                                             <div class="card-content">
-                                                <h3 class="card-title">{{$package->name}}</h3>
+                                                <h3 class="card-title">{{ $package->name }}</h3>
                                                 <div class="card-image-container">
-                                                    <img alt="Trading sticks" class="card-image" src="{{asset('frontend/assest/images/sticks.png')}}">
+                                                    <img alt="Trading sticks" class="card-image"
+                                                        src="{{ asset('frontend/assest/images/sticks.png') }}">
                                                 </div>
-                                                <p class="card-description">Entry-level challenge for aspiring traders starting
+                                                <p class="card-description">Entry-level challenge for aspiring traders
+                                                    starting
                                                     their journey.</p>
                                                 <ul class="card-features">
                                                     <li class="feature-item">
                                                         <img alt="check icon" class="check-icon"
-                                                             src="{{asset('frontend/assest/images/icon_check1.svg')}}">
-                                                        <p>Trade Limit From ${{$package->trade_limit_from}}</p>
+                                                            src="{{ asset('frontend/assest/images/icon_check1.svg') }}">
+                                                        <p>Trade Limit From ${{ $package->trade_limit_from }}</p>
                                                     </li>
                                                     <li class="feature-item">
                                                         <img alt="check icon" class="check-icon"
-                                                             src="{{asset('frontend/assest/images/icon_check1.svg')}}">
-                                                        <p>Trade Limit To ${{$package->trade_limit_to}}</p>
+                                                            src="{{ asset('frontend/assest/images/icon_check1.svg') }}">
+                                                        <p>Trade Limit To ${{ $package->trade_limit_to }}</p>
 
                                                     </li>
                                                     <li class="feature-item">
                                                         <img alt="check icon" class="check-icon"
-                                                             src="{{asset('frontend/assest/images/icon_check1.svg')}}">
-                                                        <p>Price ${{$package->price}}</p>
+                                                            src="{{ asset('frontend/assest/images/icon_check1.svg') }}">
+                                                        <p>Price ${{ $package->price }}</p>
+
+                                                    </li>
+
+                                                    <li class="feature-item">
+                                                        <img alt="check icon" class="check-icon"
+                                                            src="{{ asset('frontend/assest/images/icon_check1.svg') }}">
+                                                        <p>Leverage {{ $package->leverage }}</p>
+
+                                                    </li>
+
+                                                    <li class="feature-item">
+                                                        <img alt="check icon" class="check-icon"
+                                                            src="{{ asset('frontend/assest/images/icon_check1.svg') }}">
+                                                        <p>Account Size ${{ number_format($package->account_size) }}</p>
 
                                                     </li>
                                                     <li class="feature-item">
                                                         <img alt="check icon" class="check-icon"
-                                                             src="{{asset('frontend/assest/images/icon_check1.svg')}}">
-                                                        <p>{{$package->description}}</p>
+                                                            src="{{ asset('frontend/assest/images/icon_check1.svg') }}">
+                                                        <p>{{ $package->description }}</p>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -413,138 +467,138 @@
                                 <div class="table-responsive d-none d-xl-block">
                                     <table class="challenge-table">
                                         <thead>
-                                        <tr class="table-header">
-                                            <th class="feature-column"></th>
-                                            <th class="plan-column">BRONZE TRADER</th>
-                                            <th class="plan-column">SILVER STRATEGIST</th>
-                                            <th class="plan-column recommended-column">GOLD EXECUTOR</th>
-                                            <th class="plan-column">PLATINUM PERFORMER</th>
-                                            <th class="plan-column">DIAMOND ELITE</th>
-                                        </tr>
-                                        <tr class="recommended-row">
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>
-                                            <th class="recommended-badge">
-                                                <div class="recommended-text">
-                                                    <img alt="check icon" class="check-icon-small"
-                                                         src="{{asset('frontend/assest/images/icon_check1.svg')}}">
-                                                    Recommended
-                                                </div>
-                                            </th>
-                                            <th></th>
-                                            <th></th>
-                                        </tr>
-                                        <tr class="account-size-row">
-                                            <th class="feature-label">Account Size</th>
-                                            <th class="plan-value">$3,000</th>
-                                            <th class="plan-value">$10,000</th>
-                                            <th class="plan-value recommended-value">$25,000</th>
-                                            <th class="plan-value">$50,000</th>
-                                            <th class="plan-value">$100,000</th>
-                                        </tr>
+                                            <tr class="table-header">
+                                                <th class="feature-column"></th>
+                                                <th class="plan-column">BRONZE TRADER</th>
+                                                <th class="plan-column">SILVER STRATEGIST</th>
+                                                <th class="plan-column recommended-column">GOLD EXECUTOR</th>
+                                                <th class="plan-column">PLATINUM PERFORMER</th>
+                                                <th class="plan-column">DIAMOND ELITE</th>
+                                            </tr>
+                                            <tr class="recommended-row">
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th class="recommended-badge">
+                                                    <div class="recommended-text">
+                                                        <img alt="check icon" class="check-icon-small"
+                                                            src="{{ asset('frontend/assest/images/icon_check1.svg') }}">
+                                                        Recommended
+                                                    </div>
+                                                </th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                            <tr class="account-size-row">
+                                                <th class="feature-label">Account Size</th>
+                                                <th class="plan-value">$3,000</th>
+                                                <th class="plan-value">$10,000</th>
+                                                <th class="plan-value recommended-value">$25,000</th>
+                                                <th class="plan-value">$50,000</th>
+                                                <th class="plan-value">$100,000</th>
+                                            </tr>
                                         </thead>
                                         <tbody>
-                                        <tr class="table-row-odd">
-                                            <td class="feature-label">Challenge Duration</td>
-                                            <td class="plan-value">Unlimited</td>
-                                            <td class="plan-value">Unlimited</td>
-                                            <td class="plan-value recommended-value">Unlimited</td>
-                                            <td class="plan-value">Unlimited</td>
-                                            <td class="plan-value">Unlimited</td>
-                                        </tr>
-                                        <tr class="table-row-even">
-                                            <td class="feature-label">Minimum Trading Days</td>
-                                            <td class="plan-value">7 Days</td>
-                                            <td class="plan-value">7 Days</td>
-                                            <td class="plan-value recommended-value">7 Days</td>
-                                            <td class="plan-value">7 Days</td>
-                                            <td class="plan-value">7 Days</td>
-                                        </tr>
-                                        <tr class="table-row-odd">
-                                            <td class="feature-label">Profit Target</td>
-                                            <td class="plan-value">15%</td>
-                                            <td class="plan-value">15%</td>
-                                            <td class="plan-value recommended-value">15%</td>
-                                            <td class="plan-value">15%</td>
-                                            <td class="plan-value">15%</td>
-                                        </tr>
-                                        <tr class="table-row-even">
-                                            <td class="feature-label">Leverage</td>
-                                            <td class="plan-value">1:200</td>
-                                            <td class="plan-value">1:200</td>
-                                            <td class="plan-value recommended-value">1:200</td>
-                                            <td class="plan-value">1:200</td>
-                                            <td class="plan-value">1:200</td>
-                                        </tr>
-                                        <tr class="table-row-odd">
-                                            <td class="feature-label">Max Overall Loss Percent</td>
-                                            <td class="plan-value">9%</td>
-                                            <td class="plan-value">9%</td>
-                                            <td class="plan-value recommended-value">9%</td>
-                                            <td class="plan-value">9%</td>
-                                            <td class="plan-value">9%</td>
-                                        </tr>
-                                        <tr class="table-row-even">
-                                            <td class="feature-label">Max Daily Loss</td>
-                                            <td class="plan-value">4%</td>
-                                            <td class="plan-value">4%</td>
-                                            <td class="plan-value recommended-value">4%</td>
-                                            <td class="plan-value">4%</td>
-                                            <td class="plan-value">4%</td>
-                                        </tr>
-                                        <tr class="table-row-odd">
-                                            <td class="feature-label">Profit Split</td>
-                                            <td class="plan-value">95%</td>
-                                            <td class="plan-value">95%</td>
-                                            <td class="plan-value recommended-value">95%</td>
-                                            <td class="plan-value">95%</td>
-                                            <td class="plan-value">95%</td>
-                                        </tr>
-                                        <tr class="table-row-even">
-                                            <td class="feature-label">Commission</td>
-                                            <td class="plan-value">6 USD/Lot</td>
-                                            <td class="plan-value">6 USD/Lot</td>
-                                            <td class="plan-value recommended-value">6 USD/Lot</td>
-                                            <td class="plan-value">6 USD/Lot</td>
-                                            <td class="plan-value">6 USD/Lot</td>
-                                        </tr>
-                                        <tr class="table-row-odd">
-                                            <td class="feature-label">Spread</td>
-                                            <td class="plan-value">From 1.2 pips</td>
-                                            <td class="plan-value">From 1.2 pips</td>
-                                            <td class="plan-value recommended-value">From 1.2 pips</td>
-                                            <td class="plan-value">From 1.2 pips</td>
-                                            <td class="plan-value">From 1.2 pips</td>
-                                        </tr>
-                                        <tr class="table-row-even pricing-row">
-                                            <td class="feature-label"></td>
-                                            <td class="plan-value">
-                                                <a href="#" class="pricing-link">
-                                                    <button class="pricing-btn">Fee: $49</button>
-                                                </a>
-                                            </td>
-                                            <td class="plan-value">
-                                                <a href="#" class="pricing-link">
-                                                    <button class="pricing-btn">Fee: $99</button>
-                                                </a>
-                                            </td>
-                                            <td class="plan-value recommended-value">
-                                                <a href="#" class="pricing-link">
-                                                    <button class="pricing-btn">Fee: $229</button>
-                                                </a>
-                                            </td>
-                                            <td class="plan-value">
-                                                <a href="#" class="pricing-link">
-                                                    <button class="pricing-btn">Fee: $299</button>
-                                                </a>
-                                            </td>
-                                            <td class="plan-value">
-                                                <a href="#" class="pricing-link">
-                                                    <button class="pricing-btn">Fee: $529</button>
-                                                </a>
-                                            </td>
-                                        </tr>
+                                            <tr class="table-row-odd">
+                                                <td class="feature-label">Challenge Duration</td>
+                                                <td class="plan-value">Unlimited</td>
+                                                <td class="plan-value">Unlimited</td>
+                                                <td class="plan-value recommended-value">Unlimited</td>
+                                                <td class="plan-value">Unlimited</td>
+                                                <td class="plan-value">Unlimited</td>
+                                            </tr>
+                                            <tr class="table-row-even">
+                                                <td class="feature-label">Minimum Trading Days</td>
+                                                <td class="plan-value">7 Days</td>
+                                                <td class="plan-value">7 Days</td>
+                                                <td class="plan-value recommended-value">7 Days</td>
+                                                <td class="plan-value">7 Days</td>
+                                                <td class="plan-value">7 Days</td>
+                                            </tr>
+                                            <tr class="table-row-odd">
+                                                <td class="feature-label">Profit Target</td>
+                                                <td class="plan-value">15%</td>
+                                                <td class="plan-value">15%</td>
+                                                <td class="plan-value recommended-value">15%</td>
+                                                <td class="plan-value">15%</td>
+                                                <td class="plan-value">15%</td>
+                                            </tr>
+                                            <tr class="table-row-even">
+                                                <td class="feature-label">Leverage</td>
+                                                <td class="plan-value">1:200</td>
+                                                <td class="plan-value">1:200</td>
+                                                <td class="plan-value recommended-value">1:200</td>
+                                                <td class="plan-value">1:200</td>
+                                                <td class="plan-value">1:200</td>
+                                            </tr>
+                                            <tr class="table-row-odd">
+                                                <td class="feature-label">Max Overall Loss Percent</td>
+                                                <td class="plan-value">9%</td>
+                                                <td class="plan-value">9%</td>
+                                                <td class="plan-value recommended-value">9%</td>
+                                                <td class="plan-value">9%</td>
+                                                <td class="plan-value">9%</td>
+                                            </tr>
+                                            <tr class="table-row-even">
+                                                <td class="feature-label">Max Daily Loss</td>
+                                                <td class="plan-value">4%</td>
+                                                <td class="plan-value">4%</td>
+                                                <td class="plan-value recommended-value">4%</td>
+                                                <td class="plan-value">4%</td>
+                                                <td class="plan-value">4%</td>
+                                            </tr>
+                                            <tr class="table-row-odd">
+                                                <td class="feature-label">Profit Split</td>
+                                                <td class="plan-value">95%</td>
+                                                <td class="plan-value">95%</td>
+                                                <td class="plan-value recommended-value">95%</td>
+                                                <td class="plan-value">95%</td>
+                                                <td class="plan-value">95%</td>
+                                            </tr>
+                                            <tr class="table-row-even">
+                                                <td class="feature-label">Commission</td>
+                                                <td class="plan-value">6 USD/Lot</td>
+                                                <td class="plan-value">6 USD/Lot</td>
+                                                <td class="plan-value recommended-value">6 USD/Lot</td>
+                                                <td class="plan-value">6 USD/Lot</td>
+                                                <td class="plan-value">6 USD/Lot</td>
+                                            </tr>
+                                            <tr class="table-row-odd">
+                                                <td class="feature-label">Spread</td>
+                                                <td class="plan-value">From 1.2 pips</td>
+                                                <td class="plan-value">From 1.2 pips</td>
+                                                <td class="plan-value recommended-value">From 1.2 pips</td>
+                                                <td class="plan-value">From 1.2 pips</td>
+                                                <td class="plan-value">From 1.2 pips</td>
+                                            </tr>
+                                            <tr class="table-row-even pricing-row">
+                                                <td class="feature-label"></td>
+                                                <td class="plan-value">
+                                                    <a href="#" class="pricing-link">
+                                                        <button class="pricing-btn">Fee: $49</button>
+                                                    </a>
+                                                </td>
+                                                <td class="plan-value">
+                                                    <a href="#" class="pricing-link">
+                                                        <button class="pricing-btn">Fee: $99</button>
+                                                    </a>
+                                                </td>
+                                                <td class="plan-value recommended-value">
+                                                    <a href="#" class="pricing-link">
+                                                        <button class="pricing-btn">Fee: $229</button>
+                                                    </a>
+                                                </td>
+                                                <td class="plan-value">
+                                                    <a href="#" class="pricing-link">
+                                                        <button class="pricing-btn">Fee: $299</button>
+                                                    </a>
+                                                </td>
+                                                <td class="plan-value">
+                                                    <a href="#" class="pricing-link">
+                                                        <button class="pricing-btn">Fee: $529</button>
+                                                    </a>
+                                                </td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -555,146 +609,146 @@
                                 <div class="table-responsive d-none d-xl-block">
                                     <table class="challenge-table">
                                         <thead>
-                                        <tr class="table-header">
-                                            <th class="feature-column"></th>
-                                            <th class="plan-column">BRONZE TRADER 2-STEP</th>
-                                            <th class="plan-column">SILVER STRATEGIST 2-STEP</th>
-                                            <th class="plan-column recommended-column">GOLD EXECUTOR 2-STEP</th>
-                                            <th class="plan-column">PLATINUM PERFORMER 2-STEP</th>
-                                            <th class="plan-column">DIAMOND ELITE 2-STEP</th>
-                                        </tr>
-                                        <tr class="recommended-row">
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>
-                                            <th class="recommended-badge">
-                                                <div class="recommended-text">
-                                                    <img alt="check icon" class="check-icon-small"
-                                                         src="{{asset('frontend/assest/images/icon_check1.svg')}}">
-                                                    Recommended
-                                                </div>
-                                            </th>
-                                            <th></th>
-                                            <th></th>
-                                        </tr>
-                                        <tr class="account-size-row">
-                                            <th class="feature-label">Account Size</th>
-                                            <th class="plan-value">$3,000</th>
-                                            <th class="plan-value">$10,000</th>
-                                            <th class="plan-value recommended-value">$25,000</th>
-                                            <th class="plan-value">$50,000</th>
-                                            <th class="plan-value">$100,000</th>
-                                        </tr>
+                                            <tr class="table-header">
+                                                <th class="feature-column"></th>
+                                                <th class="plan-column">BRONZE TRADER 2-STEP</th>
+                                                <th class="plan-column">SILVER STRATEGIST 2-STEP</th>
+                                                <th class="plan-column recommended-column">GOLD EXECUTOR 2-STEP</th>
+                                                <th class="plan-column">PLATINUM PERFORMER 2-STEP</th>
+                                                <th class="plan-column">DIAMOND ELITE 2-STEP</th>
+                                            </tr>
+                                            <tr class="recommended-row">
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th class="recommended-badge">
+                                                    <div class="recommended-text">
+                                                        <img alt="check icon" class="check-icon-small"
+                                                            src="{{ asset('frontend/assest/images/icon_check1.svg') }}">
+                                                        Recommended
+                                                    </div>
+                                                </th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                            <tr class="account-size-row">
+                                                <th class="feature-label">Account Size</th>
+                                                <th class="plan-value">$3,000</th>
+                                                <th class="plan-value">$10,000</th>
+                                                <th class="plan-value recommended-value">$25,000</th>
+                                                <th class="plan-value">$50,000</th>
+                                                <th class="plan-value">$100,000</th>
+                                            </tr>
                                         </thead>
                                         <tbody>
-                                        <tr class="table-row-odd">
-                                            <td class="feature-label">Challenge Duration</td>
-                                            <td class="plan-value">Unlimited</td>
-                                            <td class="plan-value">Unlimited</td>
-                                            <td class="plan-value recommended-value">Unlimited</td>
-                                            <td class="plan-value">Unlimited</td>
-                                            <td class="plan-value">Unlimited</td>
-                                        </tr>
-                                        <tr class="table-row-even">
-                                            <td class="feature-label">Minimum Trading Days</td>
-                                            <td class="plan-value">7 Days</td>
-                                            <td class="plan-value">7 Days</td>
-                                            <td class="plan-value recommended-value">7 Days</td>
-                                            <td class="plan-value">7 Days</td>
-                                            <td class="plan-value">7 Days</td>
-                                        </tr>
-                                        <tr class="table-row-odd">
-                                            <td class="feature-label">Phase 1 Target</td>
-                                            <td class="plan-value">8%</td>
-                                            <td class="plan-value">8%</td>
-                                            <td class="plan-value recommended-value">8%</td>
-                                            <td class="plan-value">8%</td>
-                                            <td class="plan-value">8%</td>
-                                        </tr>
-                                        <tr class="table-row-even">
-                                            <td class="feature-label">Phase 2 Target</td>
-                                            <td class="plan-value">5%</td>
-                                            <td class="plan-value">5%</td>
-                                            <td class="plan-value recommended-value">5%</td>
-                                            <td class="plan-value">5%</td>
-                                            <td class="plan-value">5%</td>
-                                        </tr>
-                                        <tr class="table-row-odd">
-                                            <td class="feature-label">Leverage</td>
-                                            <td class="plan-value">1:200</td>
-                                            <td class="plan-value">1:200</td>
-                                            <td class="plan-value recommended-value">1:200</td>
-                                            <td class="plan-value">1:200</td>
-                                            <td class="plan-value">1:200</td>
-                                        </tr>
-                                        <tr class="table-row-even">
-                                            <td class="feature-label">Max Overall Loss Percent</td>
-                                            <td class="plan-value">9%</td>
-                                            <td class="plan-value">9%</td>
-                                            <td class="plan-value recommended-value">9%</td>
-                                            <td class="plan-value">9%</td>
-                                            <td class="plan-value">9%</td>
-                                        </tr>
-                                        <tr class="table-row-odd">
-                                            <td class="feature-label">Max Daily Loss</td>
-                                            <td class="plan-value">4%</td>
-                                            <td class="plan-value">4%</td>
-                                            <td class="plan-value recommended-value">4%</td>
-                                            <td class="plan-value">4%</td>
-                                            <td class="plan-value">4%</td>
-                                        </tr>
-                                        <tr class="table-row-even">
-                                            <td class="feature-label">Profit Split</td>
-                                            <td class="plan-value">90%</td>
-                                            <td class="plan-value">90%</td>
-                                            <td class="plan-value recommended-value">90%</td>
-                                            <td class="plan-value">90%</td>
-                                            <td class="plan-value">90%</td>
-                                        </tr>
-                                        <tr class="table-row-odd">
-                                            <td class="feature-label">Commission</td>
-                                            <td class="plan-value">6 USD/Lot</td>
-                                            <td class="plan-value">6 USD/Lot</td>
-                                            <td class="plan-value recommended-value">6 USD/Lot</td>
-                                            <td class="plan-value">6 USD/Lot</td>
-                                            <td class="plan-value">6 USD/Lot</td>
-                                        </tr>
-                                        <tr class="table-row-even">
-                                            <td class="feature-label">Spread</td>
-                                            <td class="plan-value">From 1.2 pips</td>
-                                            <td class="plan-value">From 1.2 pips</td>
-                                            <td class="plan-value recommended-value">From 1.2 pips</td>
-                                            <td class="plan-value">From 1.2 pips</td>
-                                            <td class="plan-value">From 1.2 pips</td>
-                                        </tr>
-                                        <tr class="table-row-odd pricing-row">
-                                            <td class="feature-label"></td>
-                                            <td class="plan-value">
-                                                <a href="#" class="pricing-link">
-                                                    <button class="pricing-btn">Fee: $39</button>
-                                                </a>
-                                            </td>
-                                            <td class="plan-value">
-                                                <a href="#" class="pricing-link">
-                                                    <button class="pricing-btn">Fee: $79</button>
-                                                </a>
-                                            </td>
-                                            <td class="plan-value recommended-value">
-                                                <a href="#" class="pricing-link">
-                                                    <button class="pricing-btn">Fee: $189</button>
-                                                </a>
-                                            </td>
-                                            <td class="plan-value">
-                                                <a href="#" class="pricing-link">
-                                                    <button class="pricing-btn">Fee: $249</button>
-                                                </a>
-                                            </td>
-                                            <td class="plan-value">
-                                                <a href="#" class="pricing-link">
-                                                    <button class="pricing-btn">Fee: $449</button>
-                                                </a>
-                                            </td>
-                                        </tr>
+                                            <tr class="table-row-odd">
+                                                <td class="feature-label">Challenge Duration</td>
+                                                <td class="plan-value">Unlimited</td>
+                                                <td class="plan-value">Unlimited</td>
+                                                <td class="plan-value recommended-value">Unlimited</td>
+                                                <td class="plan-value">Unlimited</td>
+                                                <td class="plan-value">Unlimited</td>
+                                            </tr>
+                                            <tr class="table-row-even">
+                                                <td class="feature-label">Minimum Trading Days</td>
+                                                <td class="plan-value">7 Days</td>
+                                                <td class="plan-value">7 Days</td>
+                                                <td class="plan-value recommended-value">7 Days</td>
+                                                <td class="plan-value">7 Days</td>
+                                                <td class="plan-value">7 Days</td>
+                                            </tr>
+                                            <tr class="table-row-odd">
+                                                <td class="feature-label">Phase 1 Target</td>
+                                                <td class="plan-value">8%</td>
+                                                <td class="plan-value">8%</td>
+                                                <td class="plan-value recommended-value">8%</td>
+                                                <td class="plan-value">8%</td>
+                                                <td class="plan-value">8%</td>
+                                            </tr>
+                                            <tr class="table-row-even">
+                                                <td class="feature-label">Phase 2 Target</td>
+                                                <td class="plan-value">5%</td>
+                                                <td class="plan-value">5%</td>
+                                                <td class="plan-value recommended-value">5%</td>
+                                                <td class="plan-value">5%</td>
+                                                <td class="plan-value">5%</td>
+                                            </tr>
+                                            <tr class="table-row-odd">
+                                                <td class="feature-label">Leverage</td>
+                                                <td class="plan-value">1:200</td>
+                                                <td class="plan-value">1:200</td>
+                                                <td class="plan-value recommended-value">1:200</td>
+                                                <td class="plan-value">1:200</td>
+                                                <td class="plan-value">1:200</td>
+                                            </tr>
+                                            <tr class="table-row-even">
+                                                <td class="feature-label">Max Overall Loss Percent</td>
+                                                <td class="plan-value">9%</td>
+                                                <td class="plan-value">9%</td>
+                                                <td class="plan-value recommended-value">9%</td>
+                                                <td class="plan-value">9%</td>
+                                                <td class="plan-value">9%</td>
+                                            </tr>
+                                            <tr class="table-row-odd">
+                                                <td class="feature-label">Max Daily Loss</td>
+                                                <td class="plan-value">4%</td>
+                                                <td class="plan-value">4%</td>
+                                                <td class="plan-value recommended-value">4%</td>
+                                                <td class="plan-value">4%</td>
+                                                <td class="plan-value">4%</td>
+                                            </tr>
+                                            <tr class="table-row-even">
+                                                <td class="feature-label">Profit Split</td>
+                                                <td class="plan-value">90%</td>
+                                                <td class="plan-value">90%</td>
+                                                <td class="plan-value recommended-value">90%</td>
+                                                <td class="plan-value">90%</td>
+                                                <td class="plan-value">90%</td>
+                                            </tr>
+                                            <tr class="table-row-odd">
+                                                <td class="feature-label">Commission</td>
+                                                <td class="plan-value">6 USD/Lot</td>
+                                                <td class="plan-value">6 USD/Lot</td>
+                                                <td class="plan-value recommended-value">6 USD/Lot</td>
+                                                <td class="plan-value">6 USD/Lot</td>
+                                                <td class="plan-value">6 USD/Lot</td>
+                                            </tr>
+                                            <tr class="table-row-even">
+                                                <td class="feature-label">Spread</td>
+                                                <td class="plan-value">From 1.2 pips</td>
+                                                <td class="plan-value">From 1.2 pips</td>
+                                                <td class="plan-value recommended-value">From 1.2 pips</td>
+                                                <td class="plan-value">From 1.2 pips</td>
+                                                <td class="plan-value">From 1.2 pips</td>
+                                            </tr>
+                                            <tr class="table-row-odd pricing-row">
+                                                <td class="feature-label"></td>
+                                                <td class="plan-value">
+                                                    <a href="#" class="pricing-link">
+                                                        <button class="pricing-btn">Fee: $39</button>
+                                                    </a>
+                                                </td>
+                                                <td class="plan-value">
+                                                    <a href="#" class="pricing-link">
+                                                        <button class="pricing-btn">Fee: $79</button>
+                                                    </a>
+                                                </td>
+                                                <td class="plan-value recommended-value">
+                                                    <a href="#" class="pricing-link">
+                                                        <button class="pricing-btn">Fee: $189</button>
+                                                    </a>
+                                                </td>
+                                                <td class="plan-value">
+                                                    <a href="#" class="pricing-link">
+                                                        <button class="pricing-btn">Fee: $249</button>
+                                                    </a>
+                                                </td>
+                                                <td class="plan-value">
+                                                    <a href="#" class="pricing-link">
+                                                        <button class="pricing-btn">Fee: $449</button>
+                                                    </a>
+                                                </td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -705,138 +759,138 @@
                                 <div class="table-responsive d-none d-xl-block">
                                     <table class="challenge-table">
                                         <thead>
-                                        <tr class="table-header">
-                                            <th class="feature-column"></th>
-                                            <th class="plan-column">BRONZE ZERO</th>
-                                            <th class="plan-column">SILVER ZERO</th>
-                                            <th class="plan-column recommended-column">GOLD ZERO</th>
-                                            <th class="plan-column">PLATINUM ZERO</th>
-                                            <th class="plan-column">DIAMOND ZERO</th>
-                                        </tr>
-                                        <tr class="recommended-row">
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>
-                                            <th class="recommended-badge">
-                                                <div class="recommended-text">
-                                                    <img alt="check icon" class="check-icon-small"
-                                                         src="{{asset('frontend/assest/images/icon_check1.svg')}}">
-                                                    Recommended
-                                                </div>
-                                            </th>
-                                            <th></th>
-                                            <th></th>
-                                        </tr>
-                                        <tr class="account-size-row">
-                                            <th class="feature-label">Account Size</th>
-                                            <th class="plan-value">$3,000</th>
-                                            <th class="plan-value">$10,000</th>
-                                            <th class="plan-value recommended-value">$25,000</th>
-                                            <th class="plan-value">$50,000</th>
-                                            <th class="plan-value">$100,000</th>
-                                        </tr>
+                                            <tr class="table-header">
+                                                <th class="feature-column"></th>
+                                                <th class="plan-column">BRONZE ZERO</th>
+                                                <th class="plan-column">SILVER ZERO</th>
+                                                <th class="plan-column recommended-column">GOLD ZERO</th>
+                                                <th class="plan-column">PLATINUM ZERO</th>
+                                                <th class="plan-column">DIAMOND ZERO</th>
+                                            </tr>
+                                            <tr class="recommended-row">
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th class="recommended-badge">
+                                                    <div class="recommended-text">
+                                                        <img alt="check icon" class="check-icon-small"
+                                                            src="{{ asset('frontend/assest/images/icon_check1.svg') }}">
+                                                        Recommended
+                                                    </div>
+                                                </th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                            <tr class="account-size-row">
+                                                <th class="feature-label">Account Size</th>
+                                                <th class="plan-value">$3,000</th>
+                                                <th class="plan-value">$10,000</th>
+                                                <th class="plan-value recommended-value">$25,000</th>
+                                                <th class="plan-value">$50,000</th>
+                                                <th class="plan-value">$100,000</th>
+                                            </tr>
                                         </thead>
                                         <tbody>
-                                        <tr class="table-row-odd">
-                                            <td class="feature-label">Challenge Duration</td>
-                                            <td class="plan-value">Unlimited</td>
-                                            <td class="plan-value">Unlimited</td>
-                                            <td class="plan-value recommended-value">Unlimited</td>
-                                            <td class="plan-value">Unlimited</td>
-                                            <td class="plan-value">Unlimited</td>
-                                        </tr>
-                                        <tr class="table-row-even">
-                                            <td class="feature-label">Minimum Trading Days</td>
-                                            <td class="plan-value">7 Days</td>
-                                            <td class="plan-value">7 Days</td>
-                                            <td class="plan-value recommended-value">7 Days</td>
-                                            <td class="plan-value">7 Days</td>
-                                            <td class="plan-value">7 Days</td>
-                                        </tr>
-                                        <tr class="table-row-odd">
-                                            <td class="feature-label">Profit Target</td>
-                                            <td class="plan-value">10%</td>
-                                            <td class="plan-value">10%</td>
-                                            <td class="plan-value recommended-value">10%</td>
-                                            <td class="plan-value">10%</td>
-                                            <td class="plan-value">10%</td>
-                                        </tr>
-                                        <tr class="table-row-even">
-                                            <td class="feature-label">Leverage</td>
-                                            <td class="plan-value">1:200</td>
-                                            <td class="plan-value">1:200</td>
-                                            <td class="plan-value recommended-value">1:200</td>
-                                            <td class="plan-value">1:200</td>
-                                            <td class="plan-value">1:200</td>
-                                        </tr>
-                                        <tr class="table-row-odd">
-                                            <td class="feature-label">Max Overall Loss Percent</td>
-                                            <td class="plan-value">6%</td>
-                                            <td class="plan-value">6%</td>
-                                            <td class="plan-value recommended-value">6%</td>
-                                            <td class="plan-value">6%</td>
-                                            <td class="plan-value">6%</td>
-                                        </tr>
-                                        <tr class="table-row-even">
-                                            <td class="feature-label">Max Daily Loss</td>
-                                            <td class="plan-value">3%</td>
-                                            <td class="plan-value">3%</td>
-                                            <td class="plan-value recommended-value">3%</td>
-                                            <td class="plan-value">3%</td>
-                                            <td class="plan-value">3%</td>
-                                        </tr>
-                                        <tr class="table-row-odd">
-                                            <td class="feature-label">Profit Split</td>
-                                            <td class="plan-value">80%</td>
-                                            <td class="plan-value">80%</td>
-                                            <td class="plan-value recommended-value">80%</td>
-                                            <td class="plan-value">80%</td>
-                                            <td class="plan-value">80%</td>
-                                        </tr>
-                                        <tr class="table-row-even">
-                                            <td class="feature-label">Commission</td>
-                                            <td class="plan-value">6 USD/Lot</td>
-                                            <td class="plan-value">6 USD/Lot</td>
-                                            <td class="plan-value recommended-value">6 USD/Lot</td>
-                                            <td class="plan-value">6 USD/Lot</td>
-                                            <td class="plan-value">6 USD/Lot</td>
-                                        </tr>
-                                        <tr class="table-row-odd">
-                                            <td class="feature-label">Spread</td>
-                                            <td class="plan-value">From 1.2 pips</td>
-                                            <td class="plan-value">From 1.2 pips</td>
-                                            <td class="plan-value recommended-value">From 1.2 pips</td>
-                                            <td class="plan-value">From 1.2 pips</td>
-                                            <td class="plan-value">From 1.2 pips</td>
-                                        </tr>
-                                        <tr class="table-row-even pricing-row">
-                                            <td class="feature-label"></td>
-                                            <td class="plan-value">
-                                                <a href="#" class="pricing-link">
-                                                    <button class="pricing-btn">FREE</button>
-                                                </a>
-                                            </td>
-                                            <td class="plan-value">
-                                                <a href="#" class="pricing-link">
-                                                    <button class="pricing-btn">FREE</button>
-                                                </a>
-                                            </td>
-                                            <td class="plan-value recommended-value">
-                                                <a href="#" class="pricing-link">
-                                                    <button class="pricing-btn">FREE</button>
-                                                </a>
-                                            </td>
-                                            <td class="plan-value">
-                                                <a href="#" class="pricing-link">
-                                                    <button class="pricing-btn">FREE</button>
-                                                </a>
-                                            </td>
-                                            <td class="plan-value">
-                                                <a href="#" class="pricing-link">
-                                                    <button class="pricing-btn">FREE</button>
-                                                </a>
-                                            </td>
-                                        </tr>
+                                            <tr class="table-row-odd">
+                                                <td class="feature-label">Challenge Duration</td>
+                                                <td class="plan-value">Unlimited</td>
+                                                <td class="plan-value">Unlimited</td>
+                                                <td class="plan-value recommended-value">Unlimited</td>
+                                                <td class="plan-value">Unlimited</td>
+                                                <td class="plan-value">Unlimited</td>
+                                            </tr>
+                                            <tr class="table-row-even">
+                                                <td class="feature-label">Minimum Trading Days</td>
+                                                <td class="plan-value">7 Days</td>
+                                                <td class="plan-value">7 Days</td>
+                                                <td class="plan-value recommended-value">7 Days</td>
+                                                <td class="plan-value">7 Days</td>
+                                                <td class="plan-value">7 Days</td>
+                                            </tr>
+                                            <tr class="table-row-odd">
+                                                <td class="feature-label">Profit Target</td>
+                                                <td class="plan-value">10%</td>
+                                                <td class="plan-value">10%</td>
+                                                <td class="plan-value recommended-value">10%</td>
+                                                <td class="plan-value">10%</td>
+                                                <td class="plan-value">10%</td>
+                                            </tr>
+                                            <tr class="table-row-even">
+                                                <td class="feature-label">Leverage</td>
+                                                <td class="plan-value">1:200</td>
+                                                <td class="plan-value">1:200</td>
+                                                <td class="plan-value recommended-value">1:200</td>
+                                                <td class="plan-value">1:200</td>
+                                                <td class="plan-value">1:200</td>
+                                            </tr>
+                                            <tr class="table-row-odd">
+                                                <td class="feature-label">Max Overall Loss Percent</td>
+                                                <td class="plan-value">6%</td>
+                                                <td class="plan-value">6%</td>
+                                                <td class="plan-value recommended-value">6%</td>
+                                                <td class="plan-value">6%</td>
+                                                <td class="plan-value">6%</td>
+                                            </tr>
+                                            <tr class="table-row-even">
+                                                <td class="feature-label">Max Daily Loss</td>
+                                                <td class="plan-value">3%</td>
+                                                <td class="plan-value">3%</td>
+                                                <td class="plan-value recommended-value">3%</td>
+                                                <td class="plan-value">3%</td>
+                                                <td class="plan-value">3%</td>
+                                            </tr>
+                                            <tr class="table-row-odd">
+                                                <td class="feature-label">Profit Split</td>
+                                                <td class="plan-value">80%</td>
+                                                <td class="plan-value">80%</td>
+                                                <td class="plan-value recommended-value">80%</td>
+                                                <td class="plan-value">80%</td>
+                                                <td class="plan-value">80%</td>
+                                            </tr>
+                                            <tr class="table-row-even">
+                                                <td class="feature-label">Commission</td>
+                                                <td class="plan-value">6 USD/Lot</td>
+                                                <td class="plan-value">6 USD/Lot</td>
+                                                <td class="plan-value recommended-value">6 USD/Lot</td>
+                                                <td class="plan-value">6 USD/Lot</td>
+                                                <td class="plan-value">6 USD/Lot</td>
+                                            </tr>
+                                            <tr class="table-row-odd">
+                                                <td class="feature-label">Spread</td>
+                                                <td class="plan-value">From 1.2 pips</td>
+                                                <td class="plan-value">From 1.2 pips</td>
+                                                <td class="plan-value recommended-value">From 1.2 pips</td>
+                                                <td class="plan-value">From 1.2 pips</td>
+                                                <td class="plan-value">From 1.2 pips</td>
+                                            </tr>
+                                            <tr class="table-row-even pricing-row">
+                                                <td class="feature-label"></td>
+                                                <td class="plan-value">
+                                                    <a href="#" class="pricing-link">
+                                                        <button class="pricing-btn">FREE</button>
+                                                    </a>
+                                                </td>
+                                                <td class="plan-value">
+                                                    <a href="#" class="pricing-link">
+                                                        <button class="pricing-btn">FREE</button>
+                                                    </a>
+                                                </td>
+                                                <td class="plan-value recommended-value">
+                                                    <a href="#" class="pricing-link">
+                                                        <button class="pricing-btn">FREE</button>
+                                                    </a>
+                                                </td>
+                                                <td class="plan-value">
+                                                    <a href="#" class="pricing-link">
+                                                        <button class="pricing-btn">FREE</button>
+                                                    </a>
+                                                </td>
+                                                <td class="plan-value">
+                                                    <a href="#" class="pricing-link">
+                                                        <button class="pricing-btn">FREE</button>
+                                                    </a>
+                                                </td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -887,10 +941,10 @@
                                     <div class="col-12 col-md-6 col-lg-12 col-xl-6">
                                         <div class="why-propxp-card why-propxp-card-1step h-100">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="49" height="48"
-                                                 viewBox="0 0 49 48" fill="none" class="why-propxp-card-icon">
+                                                viewBox="0 0 49 48" fill="none" class="why-propxp-card-icon">
                                                 <circle cx="24.5" cy="24" r="24" fill="#002F6C"></circle>
-                                                <mask id="mask0_0" maskUnits="userSpaceOnUse" x="0" y="0" width="49"
-                                                      height="48" style="mask-type: alpha;">
+                                                <mask id="mask0_0" maskUnits="userSpaceOnUse" x="0" y="0"
+                                                    width="49" height="48" style="mask-type: alpha;">
                                                     <circle cx="24.5" cy="24" r="24" fill="#002F6C"></circle>
                                                 </mask>
                                                 <g mask="url(#mask0_0)">
@@ -898,24 +952,24 @@
                                                     </path>
                                                     <path d="M12 27L26.5 52H-2.5L12 27Z" fill="url(#paint1_linear_0)">
                                                     </path>
-                                                    <path d="M26.5 16L47.5 52H5.5L26.5 16Z"
-                                                          fill="url(#paint2_linear_0)"></path>
+                                                    <path d="M26.5 16L47.5 52H5.5L26.5 16Z" fill="url(#paint2_linear_0)">
+                                                    </path>
                                                 </g>
                                                 <path d="M13.5 6H26.5V15H13.5L16.5333 10.5L13.5 6Z" fill="#007BFF">
                                                 </path>
                                                 <defs>
                                                     <linearGradient id="paint0_linear_0" x1="40.1207" y1="46"
-                                                                    x2="40.1207" y2="16" gradientUnits="userSpaceOnUse">
+                                                        x2="40.1207" y2="16" gradientUnits="userSpaceOnUse">
                                                         <stop stop-color="#0067D5"></stop>
                                                         <stop offset="1" stop-color="#4AA1FF"></stop>
                                                     </linearGradient>
-                                                    <linearGradient id="paint1_linear_0" x1="12.1" y1="52" x2="12.1"
-                                                                    y2="27" gradientUnits="userSpaceOnUse">
+                                                    <linearGradient id="paint1_linear_0" x1="12.1" y1="52"
+                                                        x2="12.1" y2="27" gradientUnits="userSpaceOnUse">
                                                         <stop stop-color="#0067D5"></stop>
                                                         <stop offset="1" stop-color="#4AA1FF"></stop>
                                                     </linearGradient>
                                                     <linearGradient id="paint2_linear_0" x1="26.6448" y1="52"
-                                                                    x2="26.6448" y2="16" gradientUnits="userSpaceOnUse">
+                                                        x2="26.6448" y2="16" gradientUnits="userSpaceOnUse">
                                                         <stop stop-color="#002F6C"></stop>
                                                         <stop offset="1" stop-color="#007BFF"></stop>
                                                     </linearGradient>
@@ -927,20 +981,20 @@
                                             <ul class="why-propxp-card-features">
                                                 <li class="why-propxp-feature-item">
                                                     <svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                                         data-icon="check" class="why-propxp-check-icon" role="img"
-                                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                        data-icon="check" class="why-propxp-check-icon" role="img"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                                         <path fill="currentColor"
-                                                              d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
+                                                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
                                                         </path>
                                                     </svg>
                                                     <span class="why-propxp-feature-text">1:200 Leverage</span>
                                                 </li>
                                                 <li class="why-propxp-feature-item">
                                                     <svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                                         data-icon="check" class="why-propxp-check-icon" role="img"
-                                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                        data-icon="check" class="why-propxp-check-icon" role="img"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                                         <path fill="currentColor"
-                                                              d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
+                                                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
                                                         </path>
                                                     </svg>
                                                     <span class="why-propxp-feature-text">Unlimited completion
@@ -948,30 +1002,30 @@
                                                 </li>
                                                 <li class="why-propxp-feature-item">
                                                     <svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                                         data-icon="check" class="why-propxp-check-icon" role="img"
-                                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                        data-icon="check" class="why-propxp-check-icon" role="img"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                                         <path fill="currentColor"
-                                                              d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
+                                                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
                                                         </path>
                                                     </svg>
                                                     <span class="why-propxp-feature-text">Up to 95% profit share</span>
                                                 </li>
                                                 <li class="why-propxp-feature-item">
                                                     <svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                                         data-icon="check" class="why-propxp-check-icon" role="img"
-                                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                        data-icon="check" class="why-propxp-check-icon" role="img"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                                         <path fill="currentColor"
-                                                              d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
+                                                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
                                                         </path>
                                                     </svg>
                                                     <span class="why-propxp-feature-text">Starting from $49</span>
                                                 </li>
                                                 <li class="why-propxp-feature-item">
                                                     <svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                                         data-icon="check" class="why-propxp-check-icon" role="img"
-                                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                        data-icon="check" class="why-propxp-check-icon" role="img"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                                         <path fill="currentColor"
-                                                              d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
+                                                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
                                                         </path>
                                                     </svg>
                                                     <span class="why-propxp-feature-text">Get funded up to
@@ -985,10 +1039,10 @@
                                     <div class="col-12 col-md-6 col-lg-12 col-xl-6">
                                         <div class="why-propxp-card why-propxp-card-2step h-100">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="49" height="48"
-                                                 viewBox="0 0 49 48" fill="none" class="why-propxp-card-icon">
+                                                viewBox="0 0 49 48" fill="none" class="why-propxp-card-icon">
                                                 <circle cx="24.5" cy="24" r="24" fill="#007BFF"></circle>
-                                                <mask id="mask1_1" maskUnits="userSpaceOnUse" x="0" y="0" width="49"
-                                                      height="48" style="mask-type: alpha;">
+                                                <mask id="mask1_1" maskUnits="userSpaceOnUse" x="0" y="0"
+                                                    width="49" height="48" style="mask-type: alpha;">
                                                     <circle cx="24.5" cy="24" r="24" fill="#002F6C"></circle>
                                                 </mask>
                                                 <g mask="url(#mask1_1)">
@@ -996,23 +1050,23 @@
                                                     </path>
                                                     <path d="M12 27L26.5 52H-2.5L12 27Z" fill="url(#paint1_linear_1_1)">
                                                     </path>
-                                                    <path d="M26.5 16L47.5 52H5.5L26.5 16Z"
-                                                          fill="url(#paint2_linear_1_1)"></path>
+                                                    <path d="M26.5 16L47.5 52H5.5L26.5 16Z" fill="url(#paint2_linear_1_1)">
+                                                    </path>
                                                 </g>
                                                 <path d="M13.5 6H26.5V15H13.5L16.5333 10.5L13.5 6Z" fill="white"></path>
                                                 <defs>
                                                     <linearGradient id="paint0_linear_1_1" x1="40.1207" y1="46"
-                                                                    x2="40.1207" y2="16" gradientUnits="userSpaceOnUse">
+                                                        x2="40.1207" y2="16" gradientUnits="userSpaceOnUse">
                                                         <stop stop-color="#90C5FF"></stop>
                                                         <stop offset="1" stop-color="white"></stop>
                                                     </linearGradient>
-                                                    <linearGradient id="paint1_linear_1_1" x1="12.1" y1="52" x2="12.1"
-                                                                    y2="27" gradientUnits="userSpaceOnUse">
+                                                    <linearGradient id="paint1_linear_1_1" x1="12.1" y1="52"
+                                                        x2="12.1" y2="27" gradientUnits="userSpaceOnUse">
                                                         <stop stop-color="#90C5FF"></stop>
                                                         <stop offset="1" stop-color="white"></stop>
                                                     </linearGradient>
                                                     <linearGradient id="paint2_linear_1_1" x1="26.6448" y1="52"
-                                                                    x2="26.6448" y2="16" gradientUnits="userSpaceOnUse">
+                                                        x2="26.6448" y2="16" gradientUnits="userSpaceOnUse">
                                                         <stop stop-color="#007BFF"></stop>
                                                         <stop offset="1" stop-color="#4AA1FF"></stop>
                                                     </linearGradient>
@@ -1024,20 +1078,20 @@
                                             <ul class="why-propxp-card-features">
                                                 <li class="why-propxp-feature-item">
                                                     <svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                                         data-icon="check" class="why-propxp-check-icon" role="img"
-                                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                        data-icon="check" class="why-propxp-check-icon" role="img"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                                         <path fill="currentColor"
-                                                              d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
+                                                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
                                                         </path>
                                                     </svg>
                                                     <span class="why-propxp-feature-text">1:200 Leverage</span>
                                                 </li>
                                                 <li class="why-propxp-feature-item">
                                                     <svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                                         data-icon="check" class="why-propxp-check-icon" role="img"
-                                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                        data-icon="check" class="why-propxp-check-icon" role="img"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                                         <path fill="currentColor"
-                                                              d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
+                                                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
                                                         </path>
                                                     </svg>
                                                     <span class="why-propxp-feature-text">Unlimited completion
@@ -1045,30 +1099,30 @@
                                                 </li>
                                                 <li class="why-propxp-feature-item">
                                                     <svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                                         data-icon="check" class="why-propxp-check-icon" role="img"
-                                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                        data-icon="check" class="why-propxp-check-icon" role="img"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                                         <path fill="currentColor"
-                                                              d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
+                                                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
                                                         </path>
                                                     </svg>
                                                     <span class="why-propxp-feature-text">Up to 95% profit share</span>
                                                 </li>
                                                 <li class="why-propxp-feature-item">
                                                     <svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                                         data-icon="check" class="why-propxp-check-icon" role="img"
-                                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                        data-icon="check" class="why-propxp-check-icon" role="img"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                                         <path fill="currentColor"
-                                                              d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
+                                                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
                                                         </path>
                                                     </svg>
                                                     <span class="why-propxp-feature-text">Starting from $30</span>
                                                 </li>
                                                 <li class="why-propxp-feature-item">
                                                     <svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                                         data-icon="check" class="why-propxp-check-icon" role="img"
-                                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                        data-icon="check" class="why-propxp-check-icon" role="img"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                                         <path fill="currentColor"
-                                                              d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
+                                                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
                                                         </path>
                                                     </svg>
                                                     <span class="why-propxp-feature-text">Get funded up to
@@ -1086,10 +1140,10 @@
                             <div class="col-12">
                                 <div class="why-propxp-tradingview">
                                     <img src="assest/images/tviewlogodark.png" alt="TradingView"
-                                         class="why-propxp-tradingview-logo">
+                                        class="why-propxp-tradingview-logo">
                                     <p class="why-propxp-tradingview-text">Charts are powered by</p>
                                     <a href="https://www.tradingview.com/" target="_blank" rel="noopener noreferrer"
-                                       class="why-propxp-tradingview-link">
+                                        class="why-propxp-tradingview-link">
                                         <span>TradingView</span>
                                     </a>
                                 </div>
@@ -1117,44 +1171,44 @@
                                 <span class="testimonials-brand">Xforexfxtrst</span>
                             </h3>
                             <a href="https://www.trustpilot.com/review/propxp.com" target="_blank"
-                               rel="noopener noreferrer" class="testimonials-trustpilot-link">
+                                rel="noopener noreferrer" class="testimonials-trustpilot-link">
                                 <div class="testimonials-rating">
                                     <span class="testimonials-rating-text">Excellent</span>
                                     <div class="testimonials-stars">
                                         <svg class="testimonials-star" xmlns="http://www.w3.org/2000/svg"
-                                             viewBox="0 0 46.375586 46.33">
+                                            viewBox="0 0 46.375586 46.33">
                                             <path class="tp-star__canvas" fill="#00b67a" d="M0 46.33h46.375586V0H0z">
                                             </path>
                                             <path class="tp-star__shape" fill="white"
-                                                  d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                             </path>
                                         </svg>
                                         <svg class="testimonials-star" xmlns="http://www.w3.org/2000/svg"
-                                             viewBox="0 0 46.375586 46.33">
+                                            viewBox="0 0 46.375586 46.33">
                                             <path class="tp-star__canvas" fill="#00b67a" d="M0 46.33h46.375586V0H0z">
                                             </path>
                                             <path class="tp-star__shape" fill="white"
-                                                  d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                             </path>
                                         </svg>
                                         <svg class="testimonials-star" xmlns="http://www.w3.org/2000/svg"
-                                             viewBox="0 0 46.375586 46.33">
+                                            viewBox="0 0 46.375586 46.33">
                                             <path class="tp-star__canvas" fill="#00b67a" d="M0 46.33h46.375586V0H0z">
                                             </path>
                                             <path class="tp-star__shape" fill="white"
-                                                  d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                             </path>
                                         </svg>
                                         <svg class="testimonials-star" xmlns="http://www.w3.org/2000/svg"
-                                             viewBox="0 0 46.375586 46.33">
+                                            viewBox="0 0 46.375586 46.33">
                                             <path class="tp-star__canvas" fill="#00b67a" d="M0 46.33h46.375586V0H0z">
                                             </path>
                                             <path class="tp-star__shape" fill="white"
-                                                  d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                             </path>
                                         </svg>
                                         <svg class="testimonials-star" xmlns="http://www.w3.org/2000/svg"
-                                             viewBox="0 0 46.375586 46.33">
+                                            viewBox="0 0 46.375586 46.33">
                                             <path class="tp-star__canvas" fill="#dcdce6" d="M0 46.33h46.375586V0H0z">
                                             </path>
                                             <defs>
@@ -1163,9 +1217,9 @@
                                                 </clipPath>
                                             </defs>
                                             <rect width="46.375586" height="46.33" fill="#00b67a"
-                                                  clip-path="url(#halfBgClip4)"></rect>
+                                                clip-path="url(#halfBgClip4)"></rect>
                                             <path class="tp-star__shape" fill="white"
-                                                  d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                             </path>
                                         </svg>
                                     </div>
@@ -1184,43 +1238,43 @@
                                     <div class="testimonial-header">
                                         <div class="testimonial-stars">
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                         </div>
@@ -1237,43 +1291,43 @@
                                     <div class="testimonial-header">
                                         <div class="testimonial-stars">
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                         </div>
@@ -1293,43 +1347,43 @@
                                     <div class="testimonial-header">
                                         <div class="testimonial-stars">
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                         </div>
@@ -1350,43 +1404,43 @@
                                     <div class="testimonial-header">
                                         <div class="testimonial-stars">
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                         </div>
@@ -1402,43 +1456,43 @@
                                     <div class="testimonial-header">
                                         <div class="testimonial-stars">
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                         </div>
@@ -1455,43 +1509,43 @@
                                     <div class="testimonial-header">
                                         <div class="testimonial-stars">
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                         </div>
@@ -1499,7 +1553,8 @@
                                     </div>
                                     <h4 class="testimonial-title">Amazing platform, simple fast and smooth process.</h4>
                                     <p class="testimonial-content">I started trading from zero and the amazing support
-                                        and guidance I had from Xforexfxtrst, helped me understand how prop trading works and
+                                        and guidance I had from Xforexfxtrst, helped me understand how prop trading works
+                                        and
                                         start trading in less than a day. Keep up with the good work guys!</p>
                                     <p class="testimonial-author">- Hitaro</p>
                                 </div>
@@ -1511,43 +1566,43 @@
                                     <div class="testimonial-header">
                                         <div class="testimonial-stars">
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                         </div>
@@ -1565,51 +1620,53 @@
                                     <div class="testimonial-header">
                                         <div class="testimonial-stars">
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                             <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 46.375586 46.330002">
+                                                viewBox="0 0 46.375586 46.330002">
                                                 <path class="tp-star__canvas" fill="#00b67a"
-                                                      d="M0 46.330002h46.375586V0H0z"></path>
+                                                    d="M0 46.330002h46.375586V0H0z"></path>
                                                 <path class="tp-star__shape" fill="white"
-                                                      d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
+                                                    d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z">
                                                 </path>
                                             </svg>
                                         </div>
                                         <span class="testimonial-date">Dec 25 2024</span>
                                     </div>
-                                    <h4 class="testimonial-title">Xforexfxtrst es una buena opción para traders disciplinados
+                                    <h4 class="testimonial-title">Xforexfxtrst es una buena opción para traders
+                                        disciplinados
                                         y con experiencia</h4>
-                                    <p class="testimonial-content">Xforexfxtrst es una buena opción para traders disciplinados
+                                    <p class="testimonial-content">Xforexfxtrst es una buena opción para traders
+                                        disciplinados
                                         y con experiencia en gestión de riesgo. Ofrecen oportunidades reales de
                                         crecimiento y acceso a capital, aunque todavía tienen margen de mejora en su
                                         soporte técnico y beneficios para usuarios frecuentes. Si eres un trader con
@@ -1648,8 +1705,8 @@
                                     <div class="blog-card-image-container">
                                         <div class="blog-card-image-placeholder"></div>
                                         <img alt="What Are Major, Minor And Exotic Currency Pairs In Forex Trading"
-                                             loading="lazy" decoding="async" class="blog-card-image"
-                                             src="{{asset('frontend/assest/images/5ea70a71-4f20-45d1-9723-17455e4aef76.png')}}">
+                                            loading="lazy" decoding="async" class="blog-card-image"
+                                            src="{{ asset('frontend/assest/images/5ea70a71-4f20-45d1-9723-17455e4aef76.png') }}">
                                     </div>
                                     <div class="blog-card-meta">
                                         <div class="blog-card-category">TRADING TIPS</div>
@@ -1671,8 +1728,8 @@
                                     <div class="blog-card-image-container">
                                         <div class="blog-card-image-placeholder"></div>
                                         <img alt="What Are CFD's" loading="lazy" decoding="async"
-                                             class="blog-card-image"
-                                             src="{{asset('frontend/assest/images/227f356d-cfe0-4165-9323-aa1c5077260d.png')}}">
+                                            class="blog-card-image"
+                                            src="{{ asset('frontend/assest/images/227f356d-cfe0-4165-9323-aa1c5077260d.png') }}">
                                     </div>
                                     <div class="blog-card-meta">
                                         <div class="blog-card-category">INSTRUMENTS</div>
@@ -1693,8 +1750,8 @@
                                     <div class="blog-card-image-container">
                                         <div class="blog-card-image-placeholder"></div>
                                         <img alt="Trading The Economic Calendar" loading="lazy" decoding="async"
-                                             class="blog-card-image"
-                                             src="{{asset('frontend/assest/images/593520f3-5a4e-4218-8b6a-0405787c86c6.png')}}'">
+                                            class="blog-card-image"
+                                            src="{{ asset('frontend/assest/images/593520f3-5a4e-4218-8b6a-0405787c86c6.png') }}'">
                                     </div>
                                     <div class="blog-card-meta">
                                         <div class="blog-card-category">TRADING TIPS</div>
@@ -1715,8 +1772,8 @@
                                     <div class="blog-card-image-container">
                                         <div class="blog-card-image-placeholder"></div>
                                         <img alt="What Is Margin Trading" loading="lazy" decoding="async"
-                                             class="blog-card-image"
-                                             src="{{asset('frontend/assest/images/83a2da62-599d-4950-b000-3bf6e0074c10.png')}}">
+                                            class="blog-card-image"
+                                            src="{{ asset('frontend/assest/images/83a2da62-599d-4950-b000-3bf6e0074c10.png') }}">
                                     </div>
                                     <div class="blog-card-meta">
                                         <div class="blog-card-category">TOP TRADERS</div>
@@ -1736,4 +1793,4 @@
             </div>
         </div>
     </section>
-    @endsection
+@endsection

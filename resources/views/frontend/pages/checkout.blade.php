@@ -20,10 +20,11 @@
                 @csrf
                 <input type="hidden" name="package_id" value="{{ $package->id }}">
                 <div class="row g-5">
-                    <div class="col-xl-6" >
+                    <div class="col-xl-6">
                         <div class="wow fadeInUp" data-wow-delay="0.2s">
 
-                            <div class="p-5 rounded h-100 wow fadeInUp" data-wow-delay="0.2s" style="background-color: #1e1e1e">
+                            <div class="p-5 rounded h-100 wow fadeInUp" data-wow-delay="0.2s"
+                                style="background-color: #1e1e1e">
                                 <h4 class="text-primary">Fill your details</h4>
                                 <p class="mb-4">Kindly, fill the correct details because after approval you got the login
                                     link
@@ -32,11 +33,11 @@
                                     <div class="col-lg-12 col-xl-6">
                                         <div class="form-floating">
                                             <input type="text" class="form-control border-0" id="name"
-                                                name="name" placeholder="Your Name" value="{{ old('name') }}" required>
+                                                name="name" style="color: white" placeholder="Your Name" value="{{ old('name') }}" required>
                                             @error('name')
                                                 <p class="text-danger">{{ $message }}</p>
                                             @enderror
-                                            <label for="name" class="text-dark">Your Name</label>
+                                            <label for="name" class="">Your Name</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-xl-6">
@@ -47,7 +48,7 @@
                                             @error('email')
                                                 <p class="text-danger">{{ $message }}</p>
                                             @enderror
-                                            <label for="email" class="text-dark">Your Email</label>
+                                            <label for="email" >Your Email</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-xl-6">
@@ -57,20 +58,10 @@
                                             @error('phone')
                                                 <p class="text-danger">{{ $message }}</p>
                                             @enderror
-                                            <label for="phone" class="text-dark">Your Phone</label>
+                                            <label for="phone" >Your Phone</label>
                                         </div>
                                     </div>
-                                    <div class="col-lg-12 col-xl-6">
-                                        <div class="form-floating">
-                                            <input type="file" class="form-control border-0" id="transaction_screenshot"
-                                                name="transaction_screenshot" required>
-                                            @error('transaction_screenshot')
-                                                <p class="text-danger">{{ $message }}</p>
-                                            @enderror
-                                            <label for="address" class="text-dark">Transaction Image</label>
-                                        </div>
-
-                                    </div>
+                                    
                                     <div class="col-12">
                                         <div class="form-floating">
                                             <textarea class="form-control border-0" name="notes" placeholder="Leave a message here" id="message"
@@ -78,7 +69,7 @@
                                             @error('notes')
                                                 <p class="text-danger">{{ $message }}</p>
                                             @enderror
-                                            <label for="message" class="text-dark">Message</label>
+                                            <label for="message">Message</label>
                                         </div>
                                     </div>
                                 </div>

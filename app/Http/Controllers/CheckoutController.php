@@ -60,12 +60,12 @@ class CheckoutController extends Controller
         $checkout = new Checkout();
         $checkout->user_id = $user->id;
         $checkout->package_id = $validatedData['package_id'];
-        $checkout->transaction_screenshot = $request->file('transaction_screenshot') ? $request->file('transaction_screenshot')->store('uploads', 'public') : null;
+
         $checkout->amount = Package::find($validatedData['package_id'])->price;
         $checkout->notes = $validatedData['notes'];
         $checkout->save();
 
-        return '1';
+        return 'Package purchased successfully. Please wait for admin approval.';
     }
 
     /**
