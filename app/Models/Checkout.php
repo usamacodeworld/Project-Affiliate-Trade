@@ -18,6 +18,9 @@ class Checkout extends Model
         'notes',
         'status',
         'order_number', // to track the order number for payment
+        'payment_reference',
+        'paid_at',
+        'payment_method',
     ];
 
     public function user(){

@@ -28,8 +28,8 @@ class PaymentController extends Controller
         $payload = [
             'merchant_key' => env('JENAPAY_MERCHANT_KEY'),
             'operation' => 'purchase',
-            'success_url' => route('payment.success'),
-            'cancel_url' => route('payment.cancel'),
+            'success_url' => route('payment.success', ['order_number' => $order['number']]),
+            'cancel_url' => route('payment.cancel', ['order_number' => $order['number']]),
             'hash' => $hash,
             'order' => $order,
             'customer' => [
@@ -52,6 +52,7 @@ class PaymentController extends Controller
 
     public function handleCallback(Request $request)
     {
+        return '1';
         $data = $request->all();
 
         $expectedHash = sha1(md5(strtoupper(
@@ -98,7 +99,9 @@ class PaymentController extends Controller
         if (!$checkout) {
             return view('frontend.payment.success')->with('checkout', null);
         }
-
+        $checkout->status = 'active';
+        $checkout->paid_at = now();
+        $checkout->save();
         return view('frontend.payment.success', compact('checkout'));
     }
 

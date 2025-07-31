@@ -58,6 +58,7 @@ class CheckoutController extends Controller
             'amount' => $package->price,
             'notes' => $validatedData['notes'] ?? null,
             'status' => 'pending', // Default status
+            'paymen_method'=>'card',
         ]);
 
         // Redirect to payment initiation with checkout ID
