@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('checkouts', function (Blueprint $table) {
             $table->id();
+            $table->string('order_number')->nullable();
+            $table->string('payment_reference')->nullable();
+            $table->timestamp('paid_at')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('package_id')->nullable();

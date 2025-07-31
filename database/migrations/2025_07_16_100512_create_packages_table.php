@@ -18,6 +18,8 @@ return new class extends Migration
             $table->decimal('trade_limit_from', 10, 2);
             $table->decimal('trade_limit_to', 10, 2);
             $table->decimal('price', 10, 2);
+            $table->string('leverage')->nullable();
+            $table->decimal('account_size', 10, 2)->nullable();
             $table->text('description')->nullable();
             $table->timestamps();
         });

@@ -21,7 +21,6 @@
                                                 #
                                             </th>
                                             <th>Package</th>
-                                            <th>Payment</th>
                                             <th>Members</th>
                                             <th>Date</th>
                                             <th>Status</th>
@@ -39,10 +38,7 @@
                                                     <p><strong>Price: </strong>${{ number_format($buyer->package->price) }}
                                                     </p>
                                                 </td>
-                                                <td class="align-middle">
-                                                    <a href="{{ asset('storage/' . $buyer->transaction_screenshot) }}"
-                                                        target="_blank">Payment Recipt</a>
-                                                </td>
+
                                                 <td>
                                                     <p class="mb-1"><strong>Name: </strong>{{ $buyer->user->name }}</p>
                                                     <p class="mb-1"><strong>Email: </strong>{{ $buyer->user->email }}</p>

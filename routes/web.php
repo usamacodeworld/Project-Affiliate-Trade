@@ -1,11 +1,29 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\TradeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\CheckoutController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use Illuminate\Support\Facades\Artisan;
+
+Route::get('/clear-cache', function () {
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('route:clear');
+    Artisan::call('view:clear');
+
+    return response()->json([
+        'message' => 'All caches cleared successfully!'
+    ]);
+});
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -28,14 +46,65 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
+// Route::middleware('auth')->group(function () {
+Route::group(['prefix' => 'user', 'as' => 'user.'], function () {
+    // Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::get('/dashboard', [TradeController::class, 'dashboard']);
+    Route::get('/get-quote/{symbol}', [TradeController::class, 'getQuote'])
+        ->where('symbol', '.*')
+        ->name('get.quote');
+    Route::post('/trade/place', [TradeController::class, 'placeOrder'])->name('trade.place');
+});
+// });
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('aml-policy', function () {
+    return view('frontend.pages.aml-policy');
+});
+
+Route::get('onboard-policy', function () {
+    return view('frontend.pages.on-board');
+});
+
+
+
+Route::get('/test-api', function () {
+    try {
+        $response = Http::withHeaders([
+            'APCA-API-KEY-ID' => config('alpaca.key'),
+            'APCA-API-SECRET-KEY' => config('alpaca.secret')
+        ])->get(config('alpaca.mode') === 'live'
+            ? 'https://api.alpaca.markets/v2/account'
+            : 'https://paper-api.alpaca.markets/v2/account');
+
+        if ($response->successful()) {
+            return response()->json($response->json());
+        }
+
+        return response()->json([
+            'error' => 'API request failed',
+            'status' => $response->status(),
+            'body' => $response->body()
+        ], 500);
+    } catch (\Exception $e) {
+        return response()->json([
+            'error' => $e->getMessage()
+        ], 500);
+    }
+});
+
+
+// Payment Routes
+
+Route::get('/payment/initiate', [PaymentController::class, 'initiatePayment'])->name('payment.initiate');
+Route::post('/payment/notify', [PaymentController::class, 'handleCallback'])->name('payment.notify');
+Route::get('/payment/success', [PaymentController::class, 'success'])->name('payment.success');
+Route::get('/payment/cancel', [PaymentController::class, 'cancel'])->name('payment.cancel');
+
+
 
 require __DIR__ . '/auth.php';

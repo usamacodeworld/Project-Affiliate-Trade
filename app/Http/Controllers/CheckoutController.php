@@ -38,35 +38,43 @@ class CheckoutController extends Controller
     {
         $validatedData = $request->validated();
 
-        // Check if user already exists
-        $user = User::where('email', $validatedData['email'])->first();
-        if (!$user) {
-            $baseUsername = Str::slug($validatedData['name']);
-            $counter = 1;
-            $username = $baseUsername;
-            while (User::where('username', $username)->exists()) {
-                $username = $baseUsername . '-' . $counter++;
-            }
-            $user = new User();
-            $user->name = $validatedData['name'];
-            $user->username = $username;
-            $user->email = $validatedData['email'];
-            $user->password = Hash::make('password');
-            $user->phone = $validatedData['phone'];
-            $user->save();
-        }
+        // Check or create user
+        $user = User::firstOrCreate(
+            ['email' => $validatedData['email']],
+            [
+                'name' => $validatedData['name'],
+                'username' => $this->generateUsername($validatedData['name']),
+                'password' => Hash::make('password'),
+                'phone' => $validatedData['phone'],
+            ]
+        );
 
         // Create checkout record
-        $checkout = new Checkout();
-        $checkout->user_id = $user->id;
-        $checkout->package_id = $validatedData['package_id'];
-        $checkout->transaction_screenshot = $request->file('transaction_screenshot') ? $request->file('transaction_screenshot')->store('uploads', 'public') : null;
-        $checkout->amount = Package::find($validatedData['package_id'])->price;
-        $checkout->notes = $validatedData['notes'];
-        $checkout->save();
+        $package = Package::findOrFail($validatedData['package_id']);
 
-        return '1';
+        $checkout = Checkout::create([
+            'user_id' => $user->id,
+            'package_id' => $package->id,
+            'amount' => $package->price,
+            'notes' => $validatedData['notes'] ?? null,
+            'status' => 'pending', // Default status
+        ]);
+
+        // Redirect to payment initiation with checkout ID
+        return redirect()->route('payment.initiate', ['checkout_id' => $checkout->id]);
     }
+
+    private function generateUsername($name)
+    {
+        $base = Str::slug($name);
+        $username = $base;
+        $count = 1;
+        while (User::where('username', $username)->exists()) {
+            $username = $base . '-' . $count++;
+        }
+        return $username;
+    }
+
 
     /**
      * Display the specified resource.

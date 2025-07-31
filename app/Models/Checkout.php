@@ -11,6 +11,15 @@ class Checkout extends Model
     /** @use HasFactory<\Database\Factories\CheckoutFactory> */
     use HasFactory;
 
+    protected $fillable = [
+        'user_id',
+        'package_id',
+        'amount',
+        'notes',
+        'status',
+        'order_number', // to track the order number for payment
+    ];
+
     public function user(){
         return $this->belongsTo(User::class);
     }

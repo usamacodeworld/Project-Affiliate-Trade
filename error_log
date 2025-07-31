@@ -1,0 +1,14 @@
+[21-Jul-2025 06:55:11 UTC] PHP Fatal error:  Uncaught RuntimeException: Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.1.32. in /home/xtrading/public_html/vendor/composer/platform_check.php:22
+Stack trace:
+#0 /home/xtrading/public_html/vendor/composer/autoload_real.php(25): require()
+#1 /home/xtrading/public_html/vendor/autoload.php(22): ComposerAutoloaderInitf7b152b451aa14914734c58e0c2ed998::getLoader()
+#2 /home/xtrading/public_html/index.php(14): require('/home/xtrading/...')
+#3 {main}
+  thrown in /home/xtrading/public_html/vendor/composer/platform_check.php on line 22
+[21-Jul-2025 06:55:14 UTC] PHP Fatal error:  Uncaught RuntimeException: Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.1.32. in /home/xtrading/public_html/vendor/composer/platform_check.php:22
+Stack trace:
+#0 /home/xtrading/public_html/vendor/composer/autoload_real.php(25): require()
+#1 /home/xtrading/public_html/vendor/autoload.php(22): ComposerAutoloaderInitf7b152b451aa14914734c58e0c2ed998::getLoader()
+#2 /home/xtrading/public_html/index.php(14): require('/home/xtrading/...')
+#3 {main}
+  thrown in /home/xtrading/public_html/vendor/composer/platform_check.php on line 22
